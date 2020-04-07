@@ -1,0 +1,18 @@
+import numpy as np
+def f(x):
+    return x*np.cos(x) - (2*(x**2)) + (3*x) - 1
+a = -2
+b = 2
+tol = 0.01
+count = 0
+while(np.abs(a-b)>=tol):
+    c = (a + b) / 2
+    d = f(a)*f(b)
+    count = count + 1
+    if d > tol:
+        a = c
+    else:
+        b = c
+        
+print(c)
+print('Iteration' ,count)
